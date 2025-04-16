@@ -22,7 +22,7 @@ namespace server.Data.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("server.Data.Entities.Event", b =>
+            modelBuilder.Entity("TicketWizard.Server.Data.Entities.Event", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -58,7 +58,7 @@ namespace server.Data.Migrations
                     b.ToTable("Events");
                 });
 
-            modelBuilder.Entity("server.Data.Entities.Order", b =>
+            modelBuilder.Entity("TicketWizard.Server.Data.Entities.Order", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -77,7 +77,7 @@ namespace server.Data.Migrations
                     b.ToTable("Orders");
                 });
 
-            modelBuilder.Entity("server.Data.Entities.Ticket", b =>
+            modelBuilder.Entity("TicketWizard.Server.Data.Entities.Ticket", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -106,15 +106,15 @@ namespace server.Data.Migrations
                     b.ToTable("Tickets");
                 });
 
-            modelBuilder.Entity("server.Data.Entities.Ticket", b =>
+            modelBuilder.Entity("TicketWizard.Server.Data.Entities.Ticket", b =>
                 {
-                    b.HasOne("server.Data.Entities.Event", "Event")
+                    b.HasOne("TicketWizard.Server.Data.Entities.Event", "Event")
                         .WithMany("Tickets")
                         .HasForeignKey("EventId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("server.Data.Entities.Order", "Order")
+                    b.HasOne("TicketWizard.Server.Data.Entities.Order", "Order")
                         .WithMany("Tickets")
                         .HasForeignKey("OrderId");
 
@@ -123,12 +123,12 @@ namespace server.Data.Migrations
                     b.Navigation("Order");
                 });
 
-            modelBuilder.Entity("server.Data.Entities.Event", b =>
+            modelBuilder.Entity("TicketWizard.Server.Data.Entities.Event", b =>
                 {
                     b.Navigation("Tickets");
                 });
 
-            modelBuilder.Entity("server.Data.Entities.Order", b =>
+            modelBuilder.Entity("TicketWizard.Server.Data.Entities.Order", b =>
                 {
                     b.Navigation("Tickets");
                 });

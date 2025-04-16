@@ -126,12 +126,12 @@ namespace server.Data.Migrations
                     b.Navigation("Order");
                 });
 
-            modelBuilder.Entity("server.Data.Entities.Event", b =>
+            modelBuilder.Entity("TicketWizard.Server.Data.Entities.Event", b =>
                 {
                     b.Navigation("Tickets");
                 });
 
-            modelBuilder.Entity("server.Data.Entities.Order", b =>
+            modelBuilder.Entity("TicketWizard.Server.Data.Entities.Order", b =>
                 {
                     b.Navigation("Tickets");
                 });
